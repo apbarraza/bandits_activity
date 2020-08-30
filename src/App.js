@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { useStore } from './store'
 import styled from 'styled-components'
 import DropdownInput from './components/utils/DropdownInput'
+import PlayGround from './components/PlayGround'
 import { instructions, LEVELS } from './config'
 
 const Title = styled.div`
@@ -67,32 +69,57 @@ const StartButton = styled.div`
   }
 `
 
+export const Context = React.createContext();
+
 const { EASY, MEDIUM, HARD } = LEVELS 
+const TOTAL_TRIALS = 10
 
 const App = () => {
-  const [level, setLevel] = useState(EASY);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const store = useStore();
+  const [
+    { isPlaying }
+  ] = store;
 
-  return <Container>
-    <Wrapper>
-      <Title className='d-flex align-items-center justify-content-center mb-3 mt-4'> MS Game </Title>
-      <Instructions> {instructions} </Instructions>
-      <PlayGroundWrapper>
-        <DropdownWrapper>
-          <div className='font-weight-bold mb-1'>Select Level:</div>
-          <DropdownInput
-            value={level}
-            menu={[EASY, MEDIUM, HARD]}
-            onChange={(value) => setLevel(value)} />
-        </DropdownWrapper>
-        <div>
-          <div className='d-flex align-items-center justify-content-center'>
-            <StartButton> START! </StartButton>
-          </div>
-        </div>
-      </PlayGroundWrapper>
-    </Wrapper>
-  </Container>
+  return (<Context.Provider value={store}>
+      <Container>
+      <Wrapper>
+        <Title className='d-flex align-items-center justify-content-center mb-3 mt-4'> MS Game </Title>
+        <Instructions> {instructions} </Instructions>
+        <PlayGroundWrapper>
+          {!isPlaying && <div>
+            <PresentationView/> 
+            </div>}
+          {isPlaying && <div> 
+            <PlayGround totalTrials={TOTAL_TRIALS}/> 
+          </div>}
+        </PlayGroundWrapper>
+      </Wrapper>
+    </Container>
+  </Context.Provider>)
+}
+
+const PresentationView = () => {
+  const [{
+    level,
+  },{
+    setLevel,
+    setIsPlaying
+  }] = useContext(Context);
+  
+  return (<div>
+    <DropdownWrapper>
+      <div className='font-weight-bold mb-1'>Select Level:</div>
+      <DropdownInput
+        value={level}
+        menu={[EASY, MEDIUM, HARD]}
+        onChange={(value) => setLevel(value)} />
+    </DropdownWrapper>
+    <div>
+      <div className='d-flex align-items-center justify-content-center'>
+        <StartButton onClick={() => { setIsPlaying(true) }}> START! </StartButton>
+      </div>
+    </div>
+  </div>)
 }
 
 export default App;
