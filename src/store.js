@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { LEVELS } from './config'
 
 const { EASY, MEDIUM, HARD } = LEVELS 
-const TOTAL_TRIALS = 2
+const TOTAL_TRIALS = 3
 
 const getProbabilityVector = (level) => {
   switch (level) {
@@ -18,7 +18,7 @@ const getProbabilityVector = (level) => {
 }
 
 export const useStore = () => {
-  const [isPlaying, setIsPlaying] = useState(true)
+  const [isPlaying, setIsPlaying] = useState(false)
   const [winProbabilityVector, setWinProbabilityVector] = useState([]) 
   const [level, setLevel] = useState(EASY)
   const [results, setResults] = useState([]);
@@ -26,26 +26,29 @@ export const useStore = () => {
   const [bestArm, setBestArm] = useState([]);
   const [trialsLeft, setTrialsLeft] = useState(TOTAL_TRIALS);
   const [totalCoins, setTotalCoins] = useState(0);
-  const [bestMachine, setBestMachine] = useState(null);
   const [isFinished, setIsFinished] = useState(false);
   const [selectedMachine, setSelectedMachine] = useState(null);
 
   useEffect(()=>{
     const probabilityVector = getProbabilityVector(level)
-    let maxProbability = 0
-    let bestMachine = 0
-    probabilityVector.forEach((probability, index) => {
-      if (probability > maxProbability){
-        bestMachine = index
-        maxProbability = probability
-      }
-    });
-    setBestMachine(bestMachine)
     setWinProbabilityVector(probabilityVector)
   },[level]);
 
-  const restartGame = () => {
+  let maxProbability = 0
+  let bestMachine = 0
+  winProbabilityVector.forEach((probability, index) => {
+    if (probability > maxProbability) {
+      bestMachine = index
+      maxProbability = probability
+    }
+  });
+
+  const selectLevel = () => {
     setIsPlaying(false)
+    restartGame()
+  }
+
+  const restartGame = () => {
     setRewards([])
     setBestArm([])
     setResults([])
@@ -71,12 +74,14 @@ export const useStore = () => {
     trialsLeft,
     totalCoins,
     bestMachine,
+    maxProbability,
     level,
     isPlaying,
     isFinished,
     winProbabilityVector,
   },
   {
+    selectLevel,
     selectBestMachine,
     onMachineOutput,
     restartGame,

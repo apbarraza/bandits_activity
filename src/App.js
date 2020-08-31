@@ -42,13 +42,13 @@ const PlayGroundWrapper = styled.div`
   border: solid 1px white ;
   border-radius: 8px;
   width: 100%;
-  height: 250px;
+  height: 280px;
   margin-top: 20px;
 `
 
 export const PrimaryButton = styled.div`
-  height:40px;
-  width:200px;
+  height: ${(props) => { return props.size === 'small' ? '35px' : '40px'}} ;
+  width: ${(props) => { return props.size === 'small' ? '120px' : '200px'}} ;
   margin-top:6px;
   font-weight: bold;
   border-radius: 4px;

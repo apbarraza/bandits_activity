@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { Context } from '../App'
+import { Context, PrimaryButton } from '../App'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import jackpotWin from '../assets/jackpots-win.png'
@@ -31,9 +31,22 @@ const Result = styled.div`
 
 const SlotMachinesWrapper = styled.div`
   ${(props) => {return !props.isEnabled? `
-    opacity: 0.5;
     pointer-events: none;
   `: ''}}
+`
+
+const Text = styled.div`
+  font-weight: bold;
+  font-size: 17px;
+`
+
+const WinProbabilityText = styled(Text)`
+  margin-top: 50px;
+  position: absolute;
+`
+
+const FinishedGame = styled.div`
+  margin-top: 22px;
 `
 
 const PlayGround = () => {
@@ -41,18 +54,29 @@ const PlayGround = () => {
     isFinished,
     trialsLeft,
     winProbabilityVector
+  },{
+    restartGame
   }] = useContext(Context);
 
   return (<div>
     <Header/>
+    <div className='position-relative w-100 d-flex align-items-center justify-content-center'>
+      {isFinished && 
+        <WinProbabilityText className='d-flex align-items-center justify-content-center'> 
+          Win probabilities: 
+        </WinProbabilityText>}
+    </div>
     <SlotMachinesWrapper isEnabled={!isFinished} className='d-flex align-items-center justify-content-center mt-5'>
       {winProbabilityVector.map((winProbability, index) => (<div key={index}>
         <SlotMachine index={index} isEnabled={trialsLeft > 0} winProbability={winProbability}/>
       </div>))}
     </SlotMachinesWrapper>
-    {trialsLeft === 0 && <div>
-      
-    </div>}
+    {trialsLeft === 0 && !isFinished && <Text className='mt-4 d-flex align-items-center justify-content-center'>
+      Which slot machine was the best?
+    </Text>}
+    {isFinished && <FinishedGame className='d-flex align-items-center justify-content-center'>
+      <PrimaryButton size='small' onClick={restartGame}> PLAY AGAIN </PrimaryButton>
+    </FinishedGame>}
   </div>)
 } 
 
@@ -61,12 +85,12 @@ const Header = () => {
     trialsLeft,
     totalCoins,
   }, {
-    restartGame
+    selectLevel
   }] = useContext(Context);
 
   return (
     <div className='d-flex justify-content-between'>
-      <RestartButton className='ml-3 mt-3' onClick={() => restartGame()}>
+      <RestartButton className='ml-3 mt-3' onClick={() => selectLevel()}>
         <FontAwesomeIcon className='mr-1' icon={faChevronLeft} /> Select Level
       </RestartButton>
       <ResultsWrapper className='d-flex mt-3 mr-3'>
@@ -90,20 +114,27 @@ const MachineWrapper = styled.div`
     opacity: 0.9;
   }
   ${(props) => {return props.isFinished? `
-    opacity: ${props.winProbability};
+    opacity: ${props.winProbability/props.maxProbability};
   `: ''}}
   ${(props) => {return !props.isClickable? `
     pointer-events: none;
   `:''}}
-  /* img{
-    filter: grayscale(100%) 
-  } */
 `
 
-var sleep = n => new Promise(resolve => setTimeout(resolve, n))
+const WinProbability = styled.div`
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2px;
+  margin-left: 3px;
+`
 
 const SlotMachine = ({ index, winProbability }) => {
   const [{
+    maxProbability,
     isFinished,
     trialsLeft
   }, {
@@ -112,7 +143,21 @@ const SlotMachine = ({ index, winProbability }) => {
   }] = useContext(Context);
 
   const [selectedImage, setSelectedImage] = useState(jackpot);
-  
+  const [timeoutRef, setTimeoutRef] = useState(null);
+
+  useEffect(()=>{
+    if(isFinished){
+      clearTimeout(timeoutRef)
+      setSelectedImage(jackpotWin)
+    }
+    else
+      setSelectedImage(jackpot)
+  },[isFinished]);
+
+  const formattedWinProbability = () => {
+    return Math.floor(winProbability*100)+'%'
+  }
+
   const onMachineClick = async () => {
     if(trialsLeft > 0){
       const result = Math.random()
@@ -126,21 +171,22 @@ const SlotMachine = ({ index, winProbability }) => {
         setSelectedImage(jackpotLose)
       }
       onMachineOutput(didWin)
-      await sleep(1000)
-      setSelectedImage(jackpot)
+      let timeout = setTimeout(() => setSelectedImage(jackpot), 1000);
+      setTimeoutRef(timeout)
     }
     else{
       selectBestMachine(index)
     }
   }
 
-  return (<MachineWrapper 
+  return (<MachineWrapper
+    maxProbability={maxProbability}
     isFinished={isFinished}
     winProbability={winProbability}
     isClickable={selectedImage === jackpot} 
     onClick={onMachineClick}>
-      {isFinished && <div> isFinished </div>}
     <img draggable={false} width="120px" src={selectedImage} alt=''/>
+    {isFinished && <WinProbability> {formattedWinProbability()}</WinProbability>}
   </MachineWrapper>)
 }
 
