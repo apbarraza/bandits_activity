@@ -75,6 +75,10 @@ const StartButtonWrapper = styled.div`
   width:100%;
 `
 
+const PresentationImgWrapper = styled.div`
+  width: 150px;
+`
+
 export const Context = React.createContext();
 
 const { EASY, MEDIUM, HARD } = LEVELS 
@@ -102,10 +106,6 @@ const App = () => {
     </Container>
   </Context.Provider>)
 }
-
-const PresentationImgWrapper = styled.div`
-  width: 150px;
-`
 
 const PresentationView = () => {
   const [{

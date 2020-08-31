@@ -49,6 +49,40 @@ const FinishedGame = styled.div`
   margin-top: 22px;
 `
 
+const MachineWrapper = styled.div`
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  :hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+  ${(props) => {
+    return props.isFinished ? `
+    opacity: ${props.winProbability / props.maxProbability};
+  `: ''
+  }}
+  ${(props) => {
+    return !props.isClickable ? `
+    pointer-events: none;
+  `: ''
+  }}
+`
+
+const WinProbability = styled.div`
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2px;
+  margin-left: 3px;
+`
+
 const PlayGround = () => {
   const [{
     isFinished,
@@ -101,36 +135,6 @@ const Header = () => {
       </ResultsWrapper>
     </div>)
 }
-
-const MachineWrapper = styled.div`
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  :hover {
-    cursor: pointer;
-    opacity: 0.9;
-  }
-  ${(props) => {return props.isFinished? `
-    opacity: ${props.winProbability/props.maxProbability};
-  `: ''}}
-  ${(props) => {return !props.isClickable? `
-    pointer-events: none;
-  `:''}}
-`
-
-const WinProbability = styled.div`
-  font-size: 15px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-top: 2px;
-  margin-left: 3px;
-`
 
 const SlotMachine = ({ index, winProbability }) => {
   const [{
