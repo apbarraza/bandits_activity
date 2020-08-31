@@ -8,9 +8,14 @@ export const instructions = `
   igual al original. Fue popularizado en los 60s con la creación de las hojas
   "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientement
 `
-
 export const LEVELS = {
   EASY: 'Easy',
   MEDIUM: 'Medium', 
   HARD:'Hard'
+}
+
+export const TRIALS = {
+  [LEVELS.EASY]: 15,
+  [LEVELS.MEDIUM]: 30,
+  [LEVELS.HARD]: 30
 }

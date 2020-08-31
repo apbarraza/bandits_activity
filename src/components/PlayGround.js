@@ -63,7 +63,7 @@ const PlayGround = () => {
     <div className='position-relative w-100 d-flex align-items-center justify-content-center'>
       {isFinished && 
         <WinProbabilityText className='d-flex align-items-center justify-content-center'> 
-          Win probabilities: 
+          Win Probabilities: 
         </WinProbabilityText>}
     </div>
     <SlotMachinesWrapper isEnabled={!isFinished} className='d-flex align-items-center justify-content-center mt-5'>
@@ -171,7 +171,7 @@ const SlotMachine = ({ index, winProbability }) => {
         setSelectedImage(jackpotLose)
       }
       onMachineOutput(didWin)
-      let timeout = setTimeout(() => setSelectedImage(jackpot), 1000);
+      let timeout = setTimeout(() => setSelectedImage(jackpot), 500);
       setTimeoutRef(timeout)
     }
     else{

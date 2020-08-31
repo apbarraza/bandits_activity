@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
-import { LEVELS } from './config'
+import { LEVELS, TRIALS } from './config'
 
 const { EASY, MEDIUM, HARD } = LEVELS 
-const TOTAL_TRIALS = 3
 
 const getProbabilityVector = (level) => {
   switch (level) {
@@ -24,7 +23,7 @@ export const useStore = () => {
   const [results, setResults] = useState([]);
   const [rewards, setRewards] = useState([]);
   const [bestArm, setBestArm] = useState([]);
-  const [trialsLeft, setTrialsLeft] = useState(TOTAL_TRIALS);
+  const [trialsLeft, setTrialsLeft] = useState(TRIALS[EASY]);
   const [totalCoins, setTotalCoins] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [selectedMachine, setSelectedMachine] = useState(null);
@@ -32,6 +31,7 @@ export const useStore = () => {
   useEffect(()=>{
     const probabilityVector = getProbabilityVector(level)
     setWinProbabilityVector(probabilityVector)
+    setTrialsLeft(TRIALS[level])
   },[level]);
 
   let maxProbability = 0
@@ -59,7 +59,7 @@ export const useStore = () => {
     setBestArm([])
     setResults([])
     setTotalCoins(0)
-    setTrialsLeft(TOTAL_TRIALS)
+    setTrialsLeft(TRIALS[level])
     setIsFinished(false)
     setSelectedMachine(null)
   }
