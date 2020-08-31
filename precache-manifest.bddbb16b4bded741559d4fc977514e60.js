@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "20be9de3e6fb6335b175e6dfff5a6d75",
+    "revision": "55222fcc799bb860f0d823583c520490",
     "url": "/bandits_activity/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bandits_activity/static/css/2.6d4ecc00.chunk.css"
   },
   {
-    "revision": "55ea5919adfe62c77bb9",
+    "revision": "5ef9d3a7c73d39a4efe6",
     "url": "/bandits_activity/static/css/main.d42672c2.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bandits_activity/static/js/2.d4b175c1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "55ea5919adfe62c77bb9",
-    "url": "/bandits_activity/static/js/main.20c9131b.chunk.js"
+    "revision": "5ef9d3a7c73d39a4efe6",
+    "url": "/bandits_activity/static/js/main.426c3c9b.chunk.js"
   },
   {
     "revision": "d0a38806eb2b8eb69722",

@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/bandits_activity/static/css/main.d42672c2.chunk.css",
-    "main.js": "/bandits_activity/static/js/main.20c9131b.chunk.js",
-    "main.js.map": "/bandits_activity/static/js/main.20c9131b.chunk.js.map",
+    "main.js": "/bandits_activity/static/js/main.426c3c9b.chunk.js",
+    "main.js.map": "/bandits_activity/static/js/main.426c3c9b.chunk.js.map",
     "runtime-main.js": "/bandits_activity/static/js/runtime-main.8922f8b3.js",
     "runtime-main.js.map": "/bandits_activity/static/js/runtime-main.8922f8b3.js.map",
     "static/css/2.6d4ecc00.chunk.css": "/bandits_activity/static/css/2.6d4ecc00.chunk.css",
     "static/js/2.d4b175c1.chunk.js": "/bandits_activity/static/js/2.d4b175c1.chunk.js",
     "static/js/2.d4b175c1.chunk.js.map": "/bandits_activity/static/js/2.d4b175c1.chunk.js.map",
     "index.html": "/bandits_activity/index.html",
-    "precache-manifest.77f449fdd3e5ca302396dbe9fb1dd252.js": "/bandits_activity/precache-manifest.77f449fdd3e5ca302396dbe9fb1dd252.js",
+    "precache-manifest.bddbb16b4bded741559d4fc977514e60.js": "/bandits_activity/precache-manifest.bddbb16b4bded741559d4fc977514e60.js",
     "service-worker.js": "/bandits_activity/service-worker.js",
     "static/css/2.6d4ecc00.chunk.css.map": "/bandits_activity/static/css/2.6d4ecc00.chunk.css.map",
     "static/css/main.d42672c2.chunk.css.map": "/bandits_activity/static/css/main.d42672c2.chunk.css.map",
@@ -24,6 +24,6 @@
     "static/css/2.6d4ecc00.chunk.css",
     "static/js/2.d4b175c1.chunk.js",
     "static/css/main.d42672c2.chunk.css",
-    "static/js/main.20c9131b.chunk.js"
+    "static/js/main.426c3c9b.chunk.js"
   ]
 }
