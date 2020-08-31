@@ -1,14 +1,15 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useStore } from './store'
 import styled from 'styled-components'
 import DropdownInput from './components/utils/DropdownInput'
 import PlayGround from './components/PlayGround'
 import { instructions, LEVELS } from './config'
+import jackpotWin from './assets/jackpots-win.svg'
 
 const Title = styled.div`
   font-size: 20px;
   font-weight:bold;
-  color: #09508D;
+  color: #034B7B;
 `
 
 const Wrapper = styled.div`
@@ -37,18 +38,18 @@ const DropdownWrapper = styled.div`
 `
 
 const PlayGroundWrapper = styled.div`
-  background-color: #F6F6F6;
+  background-color: #f8f8f8;
   border: solid 1px white ;
   border-radius: 8px;
   width: 100%;
-  height: 500px;
+  height: 250px;
   margin-top: 20px;
 `
 
-const StartButton = styled.div`
-  margin-top: 150px;
+export const PrimaryButton = styled.div`
   height:40px;
   width:200px;
+  margin-top:6px;
   font-weight: bold;
   border-radius: 4px;
   color:white;
@@ -56,7 +57,7 @@ const StartButton = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #09508D ;
+  background-color: #1A7DA9;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -69,10 +70,14 @@ const StartButton = styled.div`
   }
 `
 
+const StartButtonWrapper = styled.div`
+  margin-top: 10px;
+  width:100%;
+`
+
 export const Context = React.createContext();
 
 const { EASY, MEDIUM, HARD } = LEVELS 
-const TOTAL_TRIALS = 10
 
 const App = () => {
   const store = useStore();
@@ -83,20 +88,25 @@ const App = () => {
   return (<Context.Provider value={store}>
       <Container>
       <Wrapper>
-        <Title className='d-flex align-items-center justify-content-center mb-3 mt-4'> MS Game </Title>
+        <Title className='d-flex align-items-center justify-content-center mb-3 mt-5'> Slot Machine Game </Title>
         <Instructions> {instructions} </Instructions>
         <PlayGroundWrapper>
           {!isPlaying && <div>
             <PresentationView/> 
             </div>}
           {isPlaying && <div> 
-            <PlayGround totalTrials={TOTAL_TRIALS}/> 
+            <PlayGround /> 
           </div>}
         </PlayGroundWrapper>
       </Wrapper>
     </Container>
   </Context.Provider>)
 }
+
+const PresentationImgWrapper = styled.div`
+  margin-top: -10px;
+  width: 150px;
+`
 
 const PresentationView = () => {
   const [{
@@ -114,11 +124,14 @@ const PresentationView = () => {
         menu={[EASY, MEDIUM, HARD]}
         onChange={(value) => setLevel(value)} />
     </DropdownWrapper>
-    <div>
-      <div className='d-flex align-items-center justify-content-center'>
-        <StartButton onClick={() => { setIsPlaying(true) }}> START! </StartButton>
-      </div>
+    <div className='w-100 d-flex align-items-center justify-content-center'>
+      <PresentationImgWrapper>
+        <img src={jackpotWin} alt='' />
+      </PresentationImgWrapper>
     </div>
+    <StartButtonWrapper className='d-flex align-items-center justify-content-center'>
+      <PrimaryButton onClick={() => { setIsPlaying(true) }}> START! </PrimaryButton>
+    </StartButtonWrapper>
   </div>)
 }
 

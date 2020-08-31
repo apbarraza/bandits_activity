@@ -45,6 +45,7 @@ const Input = styled.div`
 const MenuItem = styled.div`
   font-size: 12px;
   height:35px;
+  user-select: none;
   :hover{
     cursor:pointer;
     color:#1F78B4;
