@@ -43,6 +43,12 @@ export const useStore = () => {
     }
   });
 
+  useEffect(()=>{
+    if(trialsLeft === 0){
+      console.log(results)
+    }
+  },[trialsLeft]);
+
   const selectLevel = () => {
     setIsPlaying(false)
     restartGame()
@@ -67,6 +73,7 @@ export const useStore = () => {
     if(didWin)
       setTotalCoins(coins => coins+1)
     setTrialsLeft(trials => trials-1)
+    setResults(results => [...results, didWin])
   }
 
   // [state, actions]

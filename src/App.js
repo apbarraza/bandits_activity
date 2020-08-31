@@ -104,7 +104,6 @@ const App = () => {
 }
 
 const PresentationImgWrapper = styled.div`
-  margin-top: -10px;
   width: 150px;
 `
 
