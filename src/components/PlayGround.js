@@ -164,9 +164,8 @@ const SlotMachine = ({ index, winProbability }) => {
 
   const onMachineClick = async () => {
     if(trialsLeft > 0){
-      const result = Math.random()
       let didWin = false
-      if(result < winProbability)
+      if (Math.random() < winProbability)
         didWin = true
       if(didWin){
         setSelectedImage(jackpotWin)
