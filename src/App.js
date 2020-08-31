@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useStore } from './store'
 import styled from 'styled-components'
 import DropdownInput from './components/utils/DropdownInput'
 import PlayGround from './components/PlayGround'
 import { instructions, LEVELS } from './config'
-import jackpotWin from './assets/jackpots-win.svg'
+import jackpotWin from './assets/jackpots-win.png'
+import Helmet from 'helmet'
 import './App.css'
 
 const Title = styled.div`
@@ -83,6 +84,7 @@ const PresentationImgWrapper = styled.div`
 export const Context = React.createContext();
 
 const { EASY, MEDIUM, HARD } = LEVELS 
+const TITLE = 'Slot Machine Game'
 
 const App = () => {
   const store = useStore();
@@ -90,10 +92,17 @@ const App = () => {
     { isPlaying }
   ] = store;
 
+  useEffect(()=>{
+    document.title = TITLE
+  },[]);
+
   return (<Context.Provider value={store}>
+      <Helmet>
+      <title>{TITLE}</title>
+      </Helmet>
       <Container>
       <Wrapper>
-        <Title className='d-flex align-items-center justify-content-center mb-3 mt-5'> Slot Machine Game </Title>
+        <Title className='d-flex align-items-center justify-content-center mb-3 mt-5'> {TITLE} </Title>
         <Instructions> {instructions} </Instructions>
         <PlayGroundWrapper>
           {!isPlaying && <div>
@@ -126,7 +135,7 @@ const PresentationView = () => {
     </DropdownWrapper>
     <div className='w-100 d-flex align-items-center justify-content-center'>
       <PresentationImgWrapper>
-        <img src={jackpotWin} alt='' />
+        <img width='150px' src={jackpotWin} alt='' />
       </PresentationImgWrapper>
     </div>
     <StartButtonWrapper className='d-flex align-items-center justify-content-center'>
