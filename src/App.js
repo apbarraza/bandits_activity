@@ -5,7 +5,6 @@ import DropdownInput from './components/utils/DropdownInput'
 import PlayGround from './components/PlayGround'
 import { instructions, LEVELS } from './config'
 import jackpotWin from './assets/jackpots-win.png'
-import Helmet from 'helmet'
 import './App.css'
 
 const Title = styled.div`
@@ -97,9 +96,6 @@ const App = () => {
   },[]);
 
   return (<Context.Provider value={store}>
-      <Helmet>
-      <title>{TITLE}</title>
-      </Helmet>
       <Container>
       <Wrapper>
         <Title className='d-flex align-items-center justify-content-center mb-3 mt-5'> {TITLE} </Title>
