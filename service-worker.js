@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/bandits_activity/precache-manifest.eceada3444a6d3d0ad6c245be458b0a3.js"
+  "/bandits_activity/precache-manifest.77f449fdd3e5ca302396dbe9fb1dd252.js"
 );
 
 self.addEventListener('message', (event) => {
