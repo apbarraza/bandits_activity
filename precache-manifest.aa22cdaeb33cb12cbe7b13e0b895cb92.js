@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "80ce718fa86c78c0da69d6c0d22ab776",
+    "revision": "b6703455244f9c8301976e16e0e871a4",
     "url": "/bandits_activity/index.html"
   },
   {
-    "revision": "6396c9a462cb8b68ec82",
+    "revision": "5ff67595018938e810d2",
     "url": "/bandits_activity/static/css/2.6d4ecc00.chunk.css"
   },
   {
-    "revision": "c35bd316c86cd2fad2ea",
+    "revision": "dc01f5b9a88af91d80bc",
     "url": "/bandits_activity/static/css/main.d42672c2.chunk.css"
   },
   {
-    "revision": "6396c9a462cb8b68ec82",
-    "url": "/bandits_activity/static/js/2.d4b175c1.chunk.js"
+    "revision": "5ff67595018938e810d2",
+    "url": "/bandits_activity/static/js/2.6fee51ee.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/bandits_activity/static/js/2.d4b175c1.chunk.js.LICENSE.txt"
+    "url": "/bandits_activity/static/js/2.6fee51ee.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c35bd316c86cd2fad2ea",
-    "url": "/bandits_activity/static/js/main.6fa447c9.chunk.js"
+    "revision": "dc01f5b9a88af91d80bc",
+    "url": "/bandits_activity/static/js/main.335210cf.chunk.js"
   },
   {
     "revision": "d0a38806eb2b8eb69722",
@@ -34,10 +34,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b1244348c0071326d5a8807270f4fedb",
     "url": "/bandits_activity/static/media/jackpots-win.b1244348.png"
-  },
-  {
-    "revision": "f42bc570518bf11aa0f488a7e8188816",
-    "url": "/bandits_activity/static/media/jackpots-win.f42bc570.svg"
   },
   {
     "revision": "26ce92e93c2d76d1a47e168b544a8099",

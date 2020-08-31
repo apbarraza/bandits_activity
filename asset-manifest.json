@@ -1,29 +1,28 @@
 {
   "files": {
     "main.css": "/bandits_activity/static/css/main.d42672c2.chunk.css",
-    "main.js": "/bandits_activity/static/js/main.6fa447c9.chunk.js",
-    "main.js.map": "/bandits_activity/static/js/main.6fa447c9.chunk.js.map",
+    "main.js": "/bandits_activity/static/js/main.335210cf.chunk.js",
+    "main.js.map": "/bandits_activity/static/js/main.335210cf.chunk.js.map",
     "runtime-main.js": "/bandits_activity/static/js/runtime-main.8922f8b3.js",
     "runtime-main.js.map": "/bandits_activity/static/js/runtime-main.8922f8b3.js.map",
     "static/css/2.6d4ecc00.chunk.css": "/bandits_activity/static/css/2.6d4ecc00.chunk.css",
-    "static/js/2.d4b175c1.chunk.js": "/bandits_activity/static/js/2.d4b175c1.chunk.js",
-    "static/js/2.d4b175c1.chunk.js.map": "/bandits_activity/static/js/2.d4b175c1.chunk.js.map",
+    "static/js/2.6fee51ee.chunk.js": "/bandits_activity/static/js/2.6fee51ee.chunk.js",
+    "static/js/2.6fee51ee.chunk.js.map": "/bandits_activity/static/js/2.6fee51ee.chunk.js.map",
     "index.html": "/bandits_activity/index.html",
-    "precache-manifest.e7f5eb588eea28a7f30ae08bf0fb1c4a.js": "/bandits_activity/precache-manifest.e7f5eb588eea28a7f30ae08bf0fb1c4a.js",
+    "precache-manifest.aa22cdaeb33cb12cbe7b13e0b895cb92.js": "/bandits_activity/precache-manifest.aa22cdaeb33cb12cbe7b13e0b895cb92.js",
     "service-worker.js": "/bandits_activity/service-worker.js",
     "static/css/2.6d4ecc00.chunk.css.map": "/bandits_activity/static/css/2.6d4ecc00.chunk.css.map",
     "static/css/main.d42672c2.chunk.css.map": "/bandits_activity/static/css/main.d42672c2.chunk.css.map",
-    "static/js/2.d4b175c1.chunk.js.LICENSE.txt": "/bandits_activity/static/js/2.d4b175c1.chunk.js.LICENSE.txt",
+    "static/js/2.6fee51ee.chunk.js.LICENSE.txt": "/bandits_activity/static/js/2.6fee51ee.chunk.js.LICENSE.txt",
     "static/media/jackpots-lose.png": "/bandits_activity/static/media/jackpots-lose.dabd52f3.png",
     "static/media/jackpots-win.png": "/bandits_activity/static/media/jackpots-win.b1244348.png",
-    "static/media/jackpots-win.svg": "/bandits_activity/static/media/jackpots-win.f42bc570.svg",
     "static/media/jackpots.png": "/bandits_activity/static/media/jackpots.26ce92e9.png"
   },
   "entrypoints": [
     "static/js/runtime-main.8922f8b3.js",
     "static/css/2.6d4ecc00.chunk.css",
-    "static/js/2.d4b175c1.chunk.js",
+    "static/js/2.6fee51ee.chunk.js",
     "static/css/main.d42672c2.chunk.css",
-    "static/js/main.6fa447c9.chunk.js"
+    "static/js/main.335210cf.chunk.js"
   ]
 }
