@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b6703455244f9c8301976e16e0e871a4",
+    "revision": "bc77a38981357fb8187d97c96e5601d5",
     "url": "/bandits_activity/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bandits_activity/static/css/2.6d4ecc00.chunk.css"
   },
   {
-    "revision": "dc01f5b9a88af91d80bc",
+    "revision": "6403b37ff1d87fc79949",
     "url": "/bandits_activity/static/css/main.d42672c2.chunk.css"
   },
   {
@@ -20,23 +20,23 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/bandits_activity/static/js/2.6fee51ee.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "dc01f5b9a88af91d80bc",
-    "url": "/bandits_activity/static/js/main.335210cf.chunk.js"
+    "revision": "6403b37ff1d87fc79949",
+    "url": "/bandits_activity/static/js/main.61fba9b6.chunk.js"
   },
   {
     "revision": "d0a38806eb2b8eb69722",
     "url": "/bandits_activity/static/js/runtime-main.8922f8b3.js"
   },
   {
-    "revision": "dabd52f31d0cd9551993d6862fdaa3bd",
-    "url": "/bandits_activity/static/media/jackpots-lose.dabd52f3.png"
+    "revision": "7162d89e9e049a5e2f78ba6c8ae9b3e7",
+    "url": "/bandits_activity/static/media/jackpots-lose.7162d89e.png"
   },
   {
-    "revision": "b1244348c0071326d5a8807270f4fedb",
-    "url": "/bandits_activity/static/media/jackpots-win.b1244348.png"
+    "revision": "fcf3250b0f7627dd13612a232cea50e5",
+    "url": "/bandits_activity/static/media/jackpots-win.fcf3250b.png"
   },
   {
-    "revision": "26ce92e93c2d76d1a47e168b544a8099",
-    "url": "/bandits_activity/static/media/jackpots.26ce92e9.png"
+    "revision": "855225d81a5722c91d1aeaee7bbf6a96",
+    "url": "/bandits_activity/static/media/jackpots.855225d8.png"
   }
 ]);
