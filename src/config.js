@@ -8,6 +8,8 @@ export const instructions = `
   igual al original. Fue popularizado en los 60s con la creación de las hojas
   "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientement
 `
+const TITLE = 'Slot Machine Game'
+
 export const LEVELS = {
   EASY: 'Easy',
   MEDIUM: 'Medium', 

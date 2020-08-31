@@ -3,7 +3,7 @@ import { useStore } from './store'
 import styled from 'styled-components'
 import DropdownInput from './components/utils/DropdownInput'
 import PlayGround from './components/PlayGround'
-import { instructions, LEVELS } from './config'
+import { instructions, LEVELS, TITLE } from './config'
 import jackpotWin from './assets/jackpots-win.png'
 import './App.css'
 
@@ -83,7 +83,6 @@ const PresentationImgWrapper = styled.div`
 export const Context = React.createContext();
 
 const { EASY, MEDIUM, HARD } = LEVELS 
-const TITLE = 'Slot Machine Game'
 
 const App = () => {
   const store = useStore();
