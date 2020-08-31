@@ -175,7 +175,7 @@ const SlotMachine = ({ index, winProbability }) => {
         setSelectedImage(jackpotLose)
       }
       onMachineOutput(didWin)
-      let timeout = setTimeout(() => setSelectedImage(jackpot), 500);
+      let timeout = setTimeout(() => setSelectedImage(jackpot), 1000);
       setTimeoutRef(timeout)
     }
     else{
