@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bc77a38981357fb8187d97c96e5601d5",
+    "revision": "1fd0b93cf410413b4d355ee45c966f05",
     "url": "/bandits_activity/index.html"
   },
   {
-    "revision": "5ff67595018938e810d2",
+    "revision": "eba66f488578174e17a2",
     "url": "/bandits_activity/static/css/2.6d4ecc00.chunk.css"
   },
   {
-    "revision": "6403b37ff1d87fc79949",
+    "revision": "c0c8744945b24c31b601",
     "url": "/bandits_activity/static/css/main.d42672c2.chunk.css"
   },
   {
-    "revision": "5ff67595018938e810d2",
-    "url": "/bandits_activity/static/js/2.6fee51ee.chunk.js"
+    "revision": "eba66f488578174e17a2",
+    "url": "/bandits_activity/static/js/2.a18da393.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/bandits_activity/static/js/2.6fee51ee.chunk.js.LICENSE.txt"
+    "url": "/bandits_activity/static/js/2.a18da393.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6403b37ff1d87fc79949",
-    "url": "/bandits_activity/static/js/main.61fba9b6.chunk.js"
+    "revision": "c0c8744945b24c31b601",
+    "url": "/bandits_activity/static/js/main.e8b5b1cf.chunk.js"
   },
   {
     "revision": "d0a38806eb2b8eb69722",
