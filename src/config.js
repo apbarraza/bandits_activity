@@ -15,7 +15,7 @@ export const LEVELS = {
 }
 
 export const TRIALS = {
-  [LEVELS.EASY]: 15,
+  [LEVELS.EASY]: 3,
   [LEVELS.MEDIUM]: 30,
   [LEVELS.HARD]: 30
 }

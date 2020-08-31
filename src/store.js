@@ -1,19 +1,11 @@
 import { useState, useEffect } from 'react'
 import { LEVELS, TRIALS } from './config'
+import { makeGame } from './utils'
 
 const { EASY, MEDIUM, HARD } = LEVELS 
 
 const getProbabilityVector = (level) => {
-  switch (level) {
-    case EASY:
-      return [0.2,0.4,0.8]
-    case MEDIUM:
-      return [0.1,0.2,0.8,0.4,0.3]
-    case HARD:
-      return [0.5,0.9,0.8,0.7,0.6]
-    default:
-      return []
-  }
+  return makeGame(level)
 }
 
 export const useStore = () => {
@@ -55,6 +47,8 @@ export const useStore = () => {
   }
 
   const restartGame = () => {
+    const probabilityVector = getProbabilityVector(level)
+    setWinProbabilityVector(probabilityVector)
     setRewards([])
     setBestArm([])
     setResults([])
