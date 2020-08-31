@@ -5,6 +5,7 @@ import DropdownInput from './components/utils/DropdownInput'
 import PlayGround from './components/PlayGround'
 import { instructions, LEVELS } from './config'
 import jackpotWin from './assets/jackpots-win.svg'
+import './App.css'
 
 const Title = styled.div`
   font-size: 20px;
