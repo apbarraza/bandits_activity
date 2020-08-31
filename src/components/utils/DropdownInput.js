@@ -31,7 +31,7 @@ const Input = styled.div`
 	box-sizing: border-box;
   height: 32px;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
   width: 100%;
 	border: 1px solid #5F6368;
   border-radius:2px;
@@ -43,7 +43,7 @@ const Input = styled.div`
 `
 
 const MenuItem = styled.div`
-  font-size: 12px;
+  font-size: 14px;
   height:35px;
   user-select: none;
   :hover{

@@ -8,13 +8,13 @@ import jackpotWin from './assets/jackpots-win.svg'
 import './App.css'
 
 const Title = styled.div`
-  font-size: 20px;
+  font-size: 24px;
   font-weight:bold;
   color: #034B7B;
 `
 
 const Wrapper = styled.div`
-  font-size: 12px;
+  font-size: 14px;
   font-family: 'Roboto', sans-serif;
   color: #5F6368;
   width: 650px;
@@ -28,7 +28,7 @@ const Container = styled.div`
 `
 
 const Instructions = styled.div`
-  font-size: 11px;
+  font-size: 14px;
   color: #5F6368;
 `
 
